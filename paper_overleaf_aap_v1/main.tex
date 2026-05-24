@@ -1,0 +1,58 @@
+\documentclass[preprint,12pt,authoryear]{elsarticle}
+
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{lineno}
+\usepackage{setspace}
+
+\journal{Accident Analysis \& Prevention}
+\doublespacing
+\modulolinenumbers[1]
+\linenumbers
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{Evidence-Bounded Driver Process-Model Replay for Automated-Driving Incident Analysis}
+
+\author[aff1]{First Author}
+\author[aff1]{Second Author}
+\author[aff1]{Corresponding Author\corref{cor1}}
+\ead{corresponding.author@example.com}
+\cortext[cor1]{Corresponding author.}
+\affiliation[aff1]{organization={Department or Laboratory Name},
+  addressline={University or Institute Name},
+  city={City},
+  country={Country}}
+
+\begin{abstract}
+Public automated-driving crash and disengagement reports provide valuable real-world evidence, but they often omit the driver-visible HMI, driver state, transition timing, and internal ADS information needed for strong driver-centered causal claims. This paper proposes an STPA-HF-constrained Evidence-Bounded Driver Process-Model Replay framework that transforms sparse incident text into auditable tabletop replay packages. The framework represents driver process-model variables, process-model update sources, candidate driver control actions, unsafe-control-action pathways, outcome compatibility, blocked claims, and minimum reporting/logging requirements. The study evaluates whether this replay layer can generate evidence-grounded review artifacts, suppress outcome-only overreach relative to direct LLM and generic chain-of-thought baselines, align with expert review of ranked pathways, and respond consistently to HMI/logging counterfactual injections. A richer-evidence case study is reserved as an evidence-density stress test.
+\end{abstract}
+
+\begin{keyword}
+Automated driving \sep STPA-HF \sep driver process model \sep tabletop replay \sep large language models \sep human factors
+\end{keyword}
+
+\end{frontmatter}
+
+\input{introduction}
+\input{related_work}
+\input{method_spine}
+\input{experiment_plan}
+
+\section*{Declaration of competing interest}
+Declarations of interest: none.
+
+\section*{Data availability}
+The public incident reports and derived functional cases used in this study will be described in the final manuscript. Code and processed artifacts will be made available subject to data-source licensing and anonymization constraints.
+
+\bibliographystyle{elsarticle-harv}
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,36 @@
+\section{Experimental design preview}
+\label{sec:experiments}
+
+The experimental design follows the evaluation pattern used in recent AAP LLM/VLM traffic-safety studies: a real-world safety dataset, structured output quality checks, strong baseline comparisons, ablation tests that isolate the reasoning mechanism, expert-alignment metrics, sensitivity analysis, and a qualitative case study. The goal is not to benchmark general language ability. The goal is to test whether an STPA-HF-constrained replay layer improves driver-centered post-incident review under sparse evidence.
+
+\subsection{Research questions}
+
+\textbf{RQ1: Replay generation and auditability.} Can the framework generate schema-valid, evidence-grounded, and review-ready driver process-model tabletop replay packages from public automated-driving collision and disengagement reports?
+
+\textbf{RQ2: Necessity of driver process-model mediation.} Compared with direct LLM, generic chain-of-thought, structured-prompt-only, no-update, and no-evidence-gate variants, does the full replay framework reduce outcome-only overreach and improve complete PM-update-action-UCA chain formation?
+
+\textbf{RQ3: Expert alignment and evidence-density sensitivity.} Do ranked replay pathways, blocked claims, and missing HMI/logging requirements align with expert review, and do they change in expected ways when HMI, logging, or richer evidence is added?
+
+\subsection{Datasets}
+
+The primary dataset should consist of public automated-driving incident reports. A minimum pilot should use 20 cases, balanced as 10 collision cases and 10 disengagement cases. The main experiment should expand to 40--50 cases, with approximately equal coverage of CA DMV collision and CA DMV disengagement reports. NHTSA SGO cases can be used as a supplementary or robustness source if their automated-driving and driver-supervision regime is clearly documented. The richer-evidence case study should use one to three cases with additional temporal, HMI, driver-action, or scene-evolution evidence. The additional evidence may come from video-derived descriptions, detailed timelines, official attachments, third-party reconstructions, or richer report narratives; it is treated as higher evidence density, not as a separate video-understanding task.
+
+\subsection{Compared systems}
+
+The main comparison should include: (1) direct LLM analysis, (2) generic chain-of-thought prompting, (3) structured prompt only without STPA-HF process-model gates, (4) no-update ablation, (5) no-evidence-gate ablation, and (6) the full Evidence-Bounded Driver Process-Model Replay framework. This comparison mirrors the experimental logic of AAP LLM/VLM studies that compare a structured safety framework against vanilla multimodal or language-model baselines, while adapting the metrics to replay quality rather than image or video classification.
+
+\subsection{Metrics}
+
+For RQ1, report schema validity, evidence ID validity, process-model quadrant coverage, update-process presence, candidate-action count, UCA-pathway count, ranked-pathway count, blocked-claim count, missing-requirement count, and replay-ready rate. For RQ2, report outcome-only overreach, unsupported driver-state claims, unsupported takeover-failure claims, complete PM-update-action-UCA chain rate, evidence-cited pathway rate, and blocked-claim transparency. For RQ3, construct an expert-annotated subset and report Top-1 pathway match, Top-3 pathway recall, ranking correlation, pathway-distribution distance, blocked-claim correctness, and a Replay Information Matching Score (RIMS). RIMS should summarize evidence fidelity, process-model alignment, update alignment, action-UCA alignment, blocked-claim correctness, and requirement relevance.
+
+\subsection{HMI/logging sensitivity}
+
+The HMI/logging experiment should be framed as replay sensitivity rather than real HMI causality. For each selected base case, compare the sparse report condition with counterfactual evidence conditions such as reported mode cue, reported takeover cue, reported time budget, reported driver intervention trace, and richer logging. Primary metrics should include update-status change, candidate-action change, pathway-rank change, blocked-claim reduction, missing-requirement reduction, and top-pathway convergence.
+
+\subsection{Richer-evidence replay case study}
+
+The richer-evidence case study should compare a sparse-text version and a higher-evidence-density version of the same incident. The expected outcome is not a stronger causal verdict. The expected outcome is a narrower replay boundary: more specific process-model nodes, more concrete update sources, fewer blocked claims, more stable pathway ranking, and more targeted HMI/logging requirements. This case study demonstrates how the same replay package behaves when evidence density changes.
+
+\subsection{Planned paper tables and figures}
+
+Table~1 should report dataset statistics and evidence missingness. Table~2 should report replay generation quality. Table~3 should report baseline and ablation comparisons. Table~4 should report expert-alignment metrics, including RIMS. Table~5 should report HMI/logging sensitivity. Table~6 should report the taxonomy of minimum reporting and logging requirements. Figure~1 should show the method pipeline from incident report to tabletop replay package. Figure~2 should show the richer-evidence case study, contrasting sparse and denser evidence conditions.

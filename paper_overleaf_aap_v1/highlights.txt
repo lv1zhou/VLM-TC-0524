@@ -1,0 +1,6 @@
+Highlights
+
+* Converts sparse AV reports into auditable driver process-model replays.
+* Uses STPA-HF to mediate scene facts, updates, actions, and UCAs.
+* Suppresses outcome-only driver overreach in LLM incident analysis.
+* Tests HMI/logging sensitivity and richer-evidence replay convergence.

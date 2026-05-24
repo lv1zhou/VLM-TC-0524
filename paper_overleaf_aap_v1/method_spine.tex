@@ -1,0 +1,25 @@
+\section{Methodological spine}
+\label{sec:method}
+
+This section is a placeholder for the full method. The final paper should present the method as an evidence-bounded replay pipeline rather than as an unconstrained LLM reasoning chain. The recommended subsection structure is:
+
+\subsection{Task definition}
+Define Evidence-Bounded Driver Process-Model Replay. State the inputs, outputs, admissible claims, and forbidden claims.
+
+\subsection{Evidence representation}
+Describe reported, derived, not-reported, narrative, and counterfactual evidence. State explicitly that not reported is not evidence of absence.
+
+\subsection{STPA-HF driver process-model representation}
+Define CPS, CPB, OPS, and OPB. Explain why these variables mediate the transition from scene facts to driver-action hypotheses.
+
+\subsection{Process-model update and action selection}
+Describe process-model formation/update sources, observed update issues, abductive update hypotheses, blocked update claims, other factors, and candidate driver actions.
+
+\subsection{UCA pathway generation and ranking}
+Explain that UCA pathways are derived forward from process model and action candidates, while reported outcomes are used only as compatibility constraints. Describe deterministic evidence gates and LLM judge ranking.
+
+\subsection{Replay package output}
+Describe the final tabletop replay package, including replay questions, blocked claims, ranked pathways, and minimum HMI/logging requirement candidates.
+
+\subsection{Claim boundary}
+State that the method does not infer true driver psychology, prove real HMI causality, reconstruct a unique accident cause, assign legal responsibility, or treat pathway scores as causal probabilities.

@@ -1,0 +1,7 @@
+results/
+data/
+__pycache__/
+*.pyc
+*.pyo
+*.zip
+
